@@ -12,9 +12,10 @@ def canConstructString(target, list):
         if target.startswith(word):
             sufix = target.lstrip(word)
             rec = canConstructString(sufix, list)
-            memo[sufix] = rec
+            memo[target] = rec
             if rec:
                 return True
+    memo[target] = False
     return False
 
 
